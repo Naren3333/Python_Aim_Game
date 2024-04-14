@@ -64,7 +64,7 @@ def end_screen(win, elapsed_time, targets_pressed, score, clicks) :
 
     score_label = LABLE_FONT.render(f"Score: {score}", 1, "white")
 
-    accuracy = round(targets_pressed / clicks *100, 1)
+    accuracy = round(targets_pressed / clicks *100, 1) if clicks > 0 else 0
     accuracy_label = LABLE_FONT.render(f"Accuracy: {accuracy}%", 1, "white")
 
     win.blit(time_label, (get_middle(time_label), 100))
